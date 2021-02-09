@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#C0C0C0">
+
+    <ImageView
+        android:id="@+id/network_error_image_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="235dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/network_error_image"
+        />
+    <TextView
+        android:id="@+id/erro_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/network_error_image_view"
+        android:layout_marginTop="8dp"
+        android:text="网络错误,请重试看看!"
+        android:textSize="18sp"/>
+
+</RelativeLayout>

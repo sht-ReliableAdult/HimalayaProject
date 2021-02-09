@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--成功页面，热词和搜索结果选择性显示，搜索内容出现，隐藏热词推荐-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_result_list"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recommend_list"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.example.himalayaproject.Views.FlowTextLayout
+        android:id="@+id/flow_text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"/>
+
+</FrameLayout>

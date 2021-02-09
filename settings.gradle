@@ -1,0 +1,3 @@
+include ':pluginmodule'
+include ':app'
+rootProject.name = "HimalayaProject"

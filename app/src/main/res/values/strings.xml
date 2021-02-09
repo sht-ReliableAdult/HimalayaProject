@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HimalayaProject</string>
+    <string-array name="indicator_name">
+        <item>推荐</item>
+        <item>收藏</item>
+        <item>历史</item>
+    </string-array>
+</resources>
