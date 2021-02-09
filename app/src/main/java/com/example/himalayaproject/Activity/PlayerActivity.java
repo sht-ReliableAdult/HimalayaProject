@@ -1,16 +1,11 @@
-package com.example.himalayaproject;
+package com.example.himalayaproject.Activity;
 
-import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
-import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +17,7 @@ import com.example.himalayaproject.Adapters.PlayerTrackPagerAdapter;
 import com.example.himalayaproject.Bases.BaseActivity;
 import com.example.himalayaproject.Interfaces.IPlayerViewCallback;
 import com.example.himalayaproject.Presenters.PlayerPresenter;
+import com.example.himalayaproject.R;
 import com.example.himalayaproject.Utils.LogUtils;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 import com.ximalaya.ting.android.opensdk.player.service.XmPlayListControl;

@@ -14,28 +14,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.himalayaproject.Adapters.RecommendRVAdapter;
 import com.example.himalayaproject.Bases.BaseApplication;
 import com.example.himalayaproject.Bases.BaseFragment;
-import com.example.himalayaproject.DetailActivity;
+import com.example.himalayaproject.Activity.DetailActivity;
 import com.example.himalayaproject.Interfaces.IRecommendViewCallback;
-import com.example.himalayaproject.MainActivity;
 import com.example.himalayaproject.Presenters.DetailPresenter;
 import com.example.himalayaproject.Presenters.RecommendPresenter;
 import com.example.himalayaproject.R;
-import com.example.himalayaproject.Utils.Constant;
-import com.example.himalayaproject.Utils.LogUtils;
 import com.example.himalayaproject.Views.UILoader;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
-import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
-import com.ximalaya.ting.android.opensdk.datatrasfer.CommonRequest;
-import com.ximalaya.ting.android.opensdk.datatrasfer.IDataCallBack;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
-import com.ximalaya.ting.android.opensdk.model.album.GussLikeAlbumList;
 
 import net.lucode.hackware.magicindicator.buildins.UIUtil;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 这里是推荐页Fragment-MVP里的主角，与自己要做的回调动作组装实现

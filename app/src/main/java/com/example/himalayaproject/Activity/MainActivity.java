@@ -1,13 +1,11 @@
-package com.example.himalayaproject;
+package com.example.himalayaproject.Activity;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -15,14 +13,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.himalayaproject.Adapters.IndicatorAdapter;
 import com.example.himalayaproject.Adapters.MainContentAdapter;
-import com.example.himalayaproject.Bases.BaseApplication;
 import com.example.himalayaproject.Interfaces.IPlayerViewCallback;
 import com.example.himalayaproject.Presenters.PlayerPresenter;
 import com.example.himalayaproject.Presenters.RecommendPresenter;
-import com.example.himalayaproject.Utils.LoadUtil;
+import com.example.himalayaproject.R;
 import com.example.himalayaproject.Utils.LogUtils;
-import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
-import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 import com.ximalaya.ting.android.opensdk.player.service.XmPlayListControl;
@@ -31,7 +26,6 @@ import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 
-import java.lang.reflect.Method;
 import java.util.List;
 
 import it.sephiroth.android.library.picasso.Picasso;

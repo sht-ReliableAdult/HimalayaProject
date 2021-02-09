@@ -1,9 +1,8 @@
-package com.example.himalayaproject;
+package com.example.himalayaproject.Activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
-import android.icu.text.Transliterator;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -28,7 +27,7 @@ import com.example.himalayaproject.Bases.BaseActivity;
 import com.example.himalayaproject.Interfaces.ISearchViewCallback;
 import com.example.himalayaproject.Presenters.DetailPresenter;
 import com.example.himalayaproject.Presenters.SearchPresenter;
-import com.example.himalayaproject.Utils.LogUtils;
+import com.example.himalayaproject.R;
 import com.example.himalayaproject.Views.FlowTextLayout;
 import com.example.himalayaproject.Views.UILoader;
 import com.ximalaya.ting.android.opensdk.model.album.Album;

@@ -1,10 +1,12 @@
-package com.example.himalayaproject;
+package com.example.himalayaproject.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+
+import com.example.himalayaproject.Utils.LogUtils;
 
 import java.lang.reflect.Method;
 
@@ -16,6 +18,7 @@ public class SplashActivity extends Activity {
         useSysLogPlugin();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        exportLogInfo("Splash", "onCreate------------------------------------------------------");
     }
 
     private void useSysLogPlugin() {
@@ -26,6 +29,10 @@ public class SplashActivity extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void exportLogInfo(String tag, String s) {
+        LogUtils.d(tag, s);
     }
 
     @Override

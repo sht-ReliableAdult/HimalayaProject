@@ -19,26 +19,26 @@
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
+        <activity android:name=".Activity.SplashActivity"
             android:theme="@style/splash_theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity android:name=".Activity.MainActivity"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".DetailActivity"
+        <activity android:name=".Activity.DetailActivity"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".PlayerActivity"
+        <activity android:name=".Activity.PlayerActivity"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".SearchActivity"
+        <activity android:name=".Activity.SearchActivity"
             android:screenOrientation="portrait">
 
         </activity>

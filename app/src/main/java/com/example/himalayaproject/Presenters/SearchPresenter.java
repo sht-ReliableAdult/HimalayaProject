@@ -1,13 +1,11 @@
 package com.example.himalayaproject.Presenters;
 
-import com.example.himalayaproject.DetailActivity;
 import com.example.himalayaproject.Interfaces.ISearchPresenter;
 import com.example.himalayaproject.Interfaces.ISearchViewCallback;
 import com.example.himalayaproject.api.AiTingBuTingApi;
 import com.ximalaya.ting.android.opensdk.datatrasfer.IDataCallBack;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
 import com.ximalaya.ting.android.opensdk.model.album.SearchAlbumList;
-import com.ximalaya.ting.android.opensdk.model.word.AlbumResult;
 import com.ximalaya.ting.android.opensdk.model.word.HotWord;
 import com.ximalaya.ting.android.opensdk.model.word.HotWordList;
 import com.ximalaya.ting.android.opensdk.model.word.QueryResult;
@@ -15,8 +13,6 @@ import com.ximalaya.ting.android.opensdk.model.word.SuggestWords;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import kotlin.collections.ArrayDeque;
 
 public class SearchPresenter implements ISearchPresenter {
 

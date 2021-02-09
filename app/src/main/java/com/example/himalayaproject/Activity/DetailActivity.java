@@ -1,6 +1,5 @@
-package com.example.himalayaproject;
+package com.example.himalayaproject.Activity;
 
-import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
@@ -9,8 +8,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -29,12 +26,12 @@ import com.example.himalayaproject.Interfaces.IDetailViewCallback;
 import com.example.himalayaproject.Interfaces.IPlayerViewCallback;
 import com.example.himalayaproject.Presenters.DetailPresenter;
 import com.example.himalayaproject.Presenters.PlayerPresenter;
+import com.example.himalayaproject.R;
 import com.example.himalayaproject.Views.UILoader;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
-import com.ximalaya.ting.android.opensdk.player.XmPlayerManager;
 import com.ximalaya.ting.android.opensdk.player.service.XmPlayListControl;
 
 import net.lucode.hackware.magicindicator.buildins.UIUtil;
