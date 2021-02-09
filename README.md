@@ -1,3 +1,3 @@
 # HimalayaProject
-爱听不听App
-请使用真机下载，喜马拉雅播放器SDK基于arm64不支持x86
+爱听不听App 接入喜马拉雅SDK
+请使用真机运行，喜马拉雅提供的播放器SDK基于arm64不支持x86模拟器
