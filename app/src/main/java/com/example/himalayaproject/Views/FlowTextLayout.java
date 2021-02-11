@@ -34,7 +34,10 @@ public class FlowTextLayout extends ViewGroup {
         super(context, attrs, defStyleAttr);
     }
 
-
+    /**
+     * 这里外部设置要显示的字符串集合进来，然后创建出所有的view加进view树，并添加点击事件
+     * @param texts
+     */
     public void setTextContents(List<String> texts) {
         this.removeAllViews();
         for (final String text : texts) {
@@ -61,14 +64,18 @@ public class FlowTextLayout extends ViewGroup {
         void onItemClick(String text);
     }
 
+    /**
+     * 设置子View的横纵间距
+     * @param horizontalSpace
+     * @param verticalSpace
+     */
     public void setSpace(int horizontalSpace, int verticalSpace) {
         this.mHorizontalSpace = horizontalSpace;
         this.mVerticalSpace = verticalSpace;
     }
 
     /**
-     * 测量分两步，先测量孩子，再测量自己，关于自定义控件
-     * 我们会在自定义控件的课程里详细给大家讲解onMeasure，onLayout方法。自定义ViewGroup的步骤。
+     * 测量
      *
      * @param widthMeasureSpec
      * @param heightMeasureSpec
@@ -77,9 +84,9 @@ public class FlowTextLayout extends ViewGroup {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         mLines.clear();
         mCurrentLineCursor = null;
-        //获取宽度
+        //获取爹要求的宽度
         int layoutWidth = MeasureSpec.getSize(widthMeasureSpec);
-        //计算最大宽度
+        //计算减去边距的最大宽度
         int maxLineWidth = layoutWidth - getPaddingLeft() - getPaddingRight();
         //先测量孩子
         int count = getChildCount();
@@ -94,30 +101,30 @@ public class FlowTextLayout extends ViewGroup {
             measureChild(view, widthMeasureSpec, heightMeasureSpec);
             // 往lines添加孩子
             if (mCurrentLineCursor == null) {
-                // 说明还没有开始添加孩子
+                // 说明还没有开始添加孩子，新建一行
                 mCurrentLineCursor = new Line(maxLineWidth, mHorizontalSpace);
-                // 添加到 Lines中
+                // 把这一行的引用添加到 Lines中
                 mLines.add(mCurrentLineCursor);
-                // 行中一个孩子都没有
+                // 本行直接添加当前孩子
                 mCurrentLineCursor.addView(view);
             } else {
-                // 行不为空,行中有孩子了
+                // 行不为空,行中有孩子了,这时候需要判断换行的事情
                 boolean canAdd = mCurrentLineCursor.canAdd(view);
                 if (canAdd) {
-                    // 可以添加
+                    // 行不超界可以添加
                     mCurrentLineCursor.addView(view);
                 } else {
-                    // 新建行
+                    // 行超界，新建行
                     mCurrentLineCursor = new Line(maxLineWidth, mHorizontalSpace);
-                    // 添加到lines中
+                    // 将当前行添加到行集合中
                     mLines.add(mCurrentLineCursor);
-                    // 将view添加到line
+                    // 将view添加到当前行
                     mCurrentLineCursor.addView(view);
                 }
             }
         }
 
-        // 设置自己的宽度和高度
+        // 设置自己的宽度和高度，宽度直接等于爹要求的就行，高度累加所有的行高和纵间距
         int measuredWidth = layoutWidth;
         float allHeight = 0;
         for (int i = 0; i < mLines.size(); i++) {
@@ -129,7 +136,7 @@ public class FlowTextLayout extends ViewGroup {
                 allHeight += mVerticalSpace;
             }
         }
-
+        //设置本ViewGroup的最终宽高
         int measuredHeight = (int) (allHeight + getPaddingTop() + getPaddingBottom() + 0.5f);
         setMeasuredDimension(measuredWidth, measuredHeight);
     }
@@ -149,7 +156,7 @@ public class FlowTextLayout extends ViewGroup {
 
     private class Line {
         // 属性
-        private List<View> mViews = new ArrayList<View>();
+        private List<View> mViews = new ArrayList<>();
         private float mMaxWidth;
         private float mUsedWidth;
         private float mHeigth;
@@ -205,10 +212,10 @@ public class FlowTextLayout extends ViewGroup {
                 return true;
             }
             int viewWidth = view.getMeasuredWidth();
-            // 预计使用的宽度
+            // 加上当前view使用的宽度
             float planWidth = mUsedWidth + mHorizontalSpace + viewWidth;
             if (planWidth > mMaxWidth) {
-                // 加不进去
+                // 加了后会超界加不进去
                 return false;
             }
             return true;

@@ -30,7 +30,7 @@ import java.util.List;
 
 /**
  * 这里是推荐页Fragment-MVP里的主角，与自己要做的回调动作组装实现
- * 安排逻辑执行者干活，干完自己做回调
+ * 安排逻辑执行者干活，干完自己做回显UI
  *
  */
 public class RecommendFragment extends BaseFragment implements IRecommendViewCallback, RecommendRVAdapter.IItemClick {
