@@ -286,6 +286,19 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mDetailPresenter != null) {
+            mDetailPresenter.unRegistViewCallback(this);
+            mDetailPresenter = null;
+        }
+        if (mPlayerPresenter != null) {
+            mPlayerPresenter.unRegistViewCallback(this);
+            mPlayerPresenter = null;
+        }
+    }
+
+    @Override
     public void onPlayStart() {
         updatePlayState(true);
     }
