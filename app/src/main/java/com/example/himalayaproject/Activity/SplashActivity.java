@@ -18,9 +18,7 @@ public class SplashActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Object obj = new Object();
         BaseApplication.registReference(this);
-        obj = null;
         //如果有其他入口，可根据入口以及附带信息判断链接向哪里，或者还可以在这个Ac里加载广告，放广告
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -36,7 +34,6 @@ public class SplashActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        System.out.println("des-------------------------------------------------------");
     }
 
 

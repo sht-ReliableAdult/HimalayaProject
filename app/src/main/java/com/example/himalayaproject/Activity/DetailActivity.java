@@ -59,7 +59,6 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
     private TwinklingRefreshLayout mRefreshLayout;
     private TextView mFavorBtn;
 
-
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +81,7 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
         //设置非RV项的点击事件
         initEvent();
         //initAnimation();
-        //BaseApplication.useSysLogPlugin();
+        BaseApplication.useSysLogPlugin();
     }
 
     private void initEvent() {
@@ -118,23 +117,23 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
     /**
      * 设置动画，进入页面灰度值从暗到亮
      */
-    /*
-    private void initAnimation() {
-        ValueAnimator enterBgAnimator = ValueAnimator.ofFloat(0.5f, 1.0f);
-        enterBgAnimator.setDuration(800);
-        enterBgAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                Window window = getWindow();
-                WindowManager.LayoutParams attributes = window.getAttributes();
-                attributes.alpha =(float) animation.getAnimatedValue();
-                window.setAttributes(attributes);
-            }
-        });
-        enterBgAnimator.start();
-    }
 
-     */
+//    private void initAnimation() {
+//        ValueAnimator enterBgAnimator = ValueAnimator.ofFloat(0.5f, 1.0f);
+//        enterBgAnimator.setDuration(800);
+//        enterBgAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//            @Override
+//            public void onAnimationUpdate(ValueAnimator animation) {
+//                Window window = getWindow();
+//                WindowManager.LayoutParams attributes = window.getAttributes();
+//                attributes.alpha =(float) animation.getAnimatedValue();
+//                window.setAttributes(attributes);
+//            }
+//        });
+//        enterBgAnimator.start();
+//    }
+
+
 
     /**
      * 在这初始化数据把已有的专辑信息设置给控件，并实现UILoader的定制成功页，即详细信息-分集RV

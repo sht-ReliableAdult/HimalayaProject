@@ -27,9 +27,9 @@ public class SysLogTool {
         }
         Reference ref = mReferenceQueue.poll();
         if (ref != null) {
-            System.out.println("对象成功回收++++++++++++++++++++++++++++++++++++++++");
+            System.out.println("对象成功回收++++++++++++++++++++++++++++++++++++++++++++");
         }else {
-            System.out.println("对象未被回收----------------------------------------");
+            System.out.println("对象未被回收--------------------------------------------");
         }
 
     }
