@@ -56,7 +56,6 @@ public class CollectionFragment extends BaseFragment {
     }
 
     private void loadData() {
-        Log.d(TAG, "正在获取数据");
         mTx.setText("登录并充值成为大会员后开启此功能！");
     }
 }

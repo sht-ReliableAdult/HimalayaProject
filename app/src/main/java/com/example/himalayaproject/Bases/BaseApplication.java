@@ -11,6 +11,8 @@ import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
 import com.ximalaya.ting.android.opensdk.datatrasfer.CommonRequest;
 import com.ximalaya.ting.android.opensdk.player.XmPlayerManager;
 
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.WeakReference;
 import java.lang.reflect.Method;
 
 
@@ -55,6 +57,25 @@ public class BaseApplication extends Application {
         return mContext;
     }
 
+    public static void registReference(Object obj) {
+        try {
+            Class<?> clazz = Class.forName("com.example.pluginmodule.SysLogTool");
+            Method regist = clazz.getMethod("regist", Object.class);
+            regist.invoke(null, obj);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void useSysLogPlugin() {
+        try {
+            Class<?> clazz = Class.forName("com.example.pluginmodule.SysLogTool");
+            Method print = clazz.getMethod("print");
+            print.invoke(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 

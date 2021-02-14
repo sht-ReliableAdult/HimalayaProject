@@ -49,5 +49,5 @@ dependencies {
     implementation 'com.github.hackware1993:MagicIndicator:1.6.0' 
     implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
     implementation 'com.lcodecorex:tkrefreshlayout:1.0.7'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.6'
+
 }

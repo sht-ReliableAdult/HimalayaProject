@@ -36,6 +36,8 @@ import com.ximalaya.ting.android.opensdk.player.service.XmPlayListControl;
 
 import net.lucode.hackware.magicindicator.buildins.UIUtil;
 
+import java.lang.ref.ReferenceQueue;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import it.sephiroth.android.library.picasso.Picasso;
@@ -80,9 +82,8 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
         //设置非RV项的点击事件
         initEvent();
         //initAnimation();
+        //BaseApplication.useSysLogPlugin();
     }
-
-
 
     private void initEvent() {
         //播放按钮控制播放器状态
@@ -296,6 +297,7 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
             mPlayerPresenter.unRegistViewCallback(this);
             mPlayerPresenter = null;
         }
+        mAuthorView = null;
     }
 
     @Override
