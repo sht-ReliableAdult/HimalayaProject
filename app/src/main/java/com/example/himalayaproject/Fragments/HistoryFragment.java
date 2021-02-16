@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,11 +20,13 @@ public class HistoryFragment extends BaseFragment {
     boolean isFirstLoaded = true;
     private TextView mTx;
     String TAG = "HistoryFragment";
+    private ImageView mImg;
 
     @Override
     protected View onSubViewLoaded(LayoutInflater layoutInflater, ViewGroup container) {
         View rootView = layoutInflater.inflate(R.layout.fragment_history, container,false);
         mTx = rootView.findViewById(R.id.history_text);
+        mImg = rootView.findViewById(R.id.history_img);
         return rootView;
     }
 
@@ -54,5 +57,6 @@ public class HistoryFragment extends BaseFragment {
     }
     private void loadData() {
         mTx.setText("登录并充值成为大会员后开启此功能！");
+        mImg.setImageResource(R.mipmap.bg_view);
     }
 }

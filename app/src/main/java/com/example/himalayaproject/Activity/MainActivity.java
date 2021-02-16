@@ -18,6 +18,7 @@ import com.example.himalayaproject.Presenters.PlayerPresenter;
 import com.example.himalayaproject.Presenters.RecommendPresenter;
 import com.example.himalayaproject.R;
 import com.example.himalayaproject.Utils.LogUtils;
+import com.example.himalayaproject.api.DbHelper;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 import com.ximalaya.ting.android.opensdk.player.service.XmPlayListControl;

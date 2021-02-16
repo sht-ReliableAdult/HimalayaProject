@@ -22,12 +22,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.himalayaproject.Adapters.DetailListRVAdapter;
 import com.example.himalayaproject.Bases.BaseActivity;
 import com.example.himalayaproject.Bases.BaseApplication;
+import com.example.himalayaproject.Interfaces.ICollectionCallback;
 import com.example.himalayaproject.Interfaces.IDetailViewCallback;
 import com.example.himalayaproject.Interfaces.IPlayerViewCallback;
+import com.example.himalayaproject.Presenters.CollectionPresenter;
 import com.example.himalayaproject.Presenters.DetailPresenter;
 import com.example.himalayaproject.Presenters.PlayerPresenter;
 import com.example.himalayaproject.R;
 import com.example.himalayaproject.Views.UILoader;
+import com.example.himalayaproject.api.CollectionDao;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
@@ -42,7 +45,7 @@ import java.util.List;
 
 import it.sephiroth.android.library.picasso.Picasso;
 
-public class DetailActivity extends BaseActivity implements IDetailViewCallback, DetailListRVAdapter.ItemClickListener, IPlayerViewCallback {
+public class DetailActivity extends BaseActivity implements IDetailViewCallback, DetailListRVAdapter.ItemClickListener, IPlayerViewCallback, ICollectionCallback {
     private ImageView mBarImageView;
     private ImageView mCoverImageView;
     private TextView mAlbumTitleView;
@@ -58,6 +61,8 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
     private List<Track> mCurTracks;
     private TwinklingRefreshLayout mRefreshLayout;
     private TextView mFavorBtn;
+    private Album mAlbum;
+    //private CollectionPresenter mCollectionPresenter;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -76,6 +81,14 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
         //播放器的presenter
         mPlayerPresenter = PlayerPresenter.getInstance();
         mPlayerPresenter.registViewCallback(this);
+//        获取收藏presenter
+//        mCollectionPresenter = CollectionPresenter.getInstance();
+//        mCollectionPresenter.registViewCallback(this);
+//        if (mCollectionPresenter.isCollected(mAlbum)) {
+//            mFavorBtn.setText("已收藏");
+//        }else{
+//            mFavorBtn.setText("收藏");
+//        }
         //初始化播放按钮状态
         updatePlayState(mPlayerPresenter.isPlaying());
         //设置非RV项的点击事件
@@ -109,6 +122,7 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
         mFavorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Toast.makeText(DetailActivity.this, "登录并充值成为大会员后开启此功能！", Toast.LENGTH_SHORT).show();
             }
         });
@@ -259,6 +273,7 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
         if (mCoverImageView != null) {
             Picasso.with(this).load(album.getCoverUrlLarge()).into(mCoverImageView);
         }
+        mAlbum = album;
     }
 
     /**
@@ -296,6 +311,10 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
             mPlayerPresenter.unRegistViewCallback(this);
             mPlayerPresenter = null;
         }
+//        if (mCollectionPresenter != null) {
+//            mCollectionPresenter.unRegistViewCallback(this);
+//            mCollectionPresenter = null;
+//        }
         mAuthorView = null;
     }
 
@@ -371,6 +390,25 @@ public class DetailActivity extends BaseActivity implements IDetailViewCallback,
 
     @Override
     public void onPlayModeChanged(XmPlayListControl.PlayMode playMode) {
+
+    }
+
+    /**
+     * 收藏P层的回调
+     * @param isSuccess
+     */
+    @Override
+    public void onAddResult(Boolean isSuccess) {
+
+    }
+
+    @Override
+    public void onDelResult(Boolean isSuccess) {
+
+    }
+
+    @Override
+    public void onCollectionLoaded(List<Album> albums) {
 
     }
 }

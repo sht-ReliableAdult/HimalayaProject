@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.example.himalayaproject.Bases.BaseApplication;
 import com.example.himalayaproject.Utils.LogUtils;
+import com.example.himalayaproject.api.DbHelper;
 
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
