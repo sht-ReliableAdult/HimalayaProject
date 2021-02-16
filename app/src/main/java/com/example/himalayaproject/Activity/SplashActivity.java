@@ -35,8 +35,8 @@ public class SplashActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        BaseApplication.useSysLogPlugin();
     }
-
 
     private void exportLogInfo(String tag, String s) {
         LogUtils.d(tag, s);
