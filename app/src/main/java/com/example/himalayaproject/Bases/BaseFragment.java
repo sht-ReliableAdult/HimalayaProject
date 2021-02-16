@@ -28,5 +28,5 @@ public abstract class BaseFragment extends Fragment {
         return mRootView;
     }
 
-    protected abstract View onSubViewLoaded(LayoutInflater layoutInflater, ViewGroup container);
+    public abstract View onSubViewLoaded(LayoutInflater layoutInflater, ViewGroup container);
 }
